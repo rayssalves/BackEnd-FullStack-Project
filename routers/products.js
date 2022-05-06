@@ -3,6 +3,7 @@ const Product = require("../models").product;
 
 const router = new Router();
 
+// Get all the products from the Database
 router.get("/", async (request, response) => {
   try {
     const products = await Product.findAll();
@@ -12,6 +13,7 @@ router.get("/", async (request, response) => {
   }
 });
 
+// Get an specific product from the database - Used in the details page
 router.get("/:id", async (request, response) => {
   try {
     const { id } = request.params;

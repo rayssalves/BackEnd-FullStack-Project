@@ -3,6 +3,7 @@ const Category = require("../models").category;
 
 const router = new Router();
 
+// Get all the categories from the Database
 router.get("/", async (request, response) => {
   try {
     const categories = await Category.findAll();
